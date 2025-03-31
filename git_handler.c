@@ -1,11 +1,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "git_handler.h"
 
 const int BUFFER_SIZE = 1024;
 
 // Grabs git log output from midnight
-FILE* get_git_log() {
+FILE* get_log() {
   FILE* git_log = popen("git log --since=midnight", "r");
   if (git_log == NULL) {
     perror("Failed to run git log");
@@ -16,7 +17,7 @@ FILE* get_git_log() {
 
 // Parses git log output to count commits
 int get_commits() {
-  FILE* git_log = get_git_log();
+  FILE* git_log = get_log();
 
   int commit_count = 0;
   char buffer[BUFFER_SIZE];
