@@ -2,9 +2,11 @@
 #define KITTY_STATE
 
 #include <time.h>
+#include <stdbool.h>
 
 time_t set_time_last_fed();
 time_t get_time_since_fed(time_t time_last_fed);
 int get_days_since_fed(time_t time_last_fed);
+bool get_hungry(time_t time_last_fed);
 
 #endif // !KITTY_STATE
