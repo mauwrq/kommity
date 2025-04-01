@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include "kitty_state.h"
 
-int SECONDS_PER_DAY = 86400;
+const int SECONDS_PER_DAY = 86400;
 const int DAYS_TO_HUNGRY = 1;
 
 time_t set_time_last_fed() {
